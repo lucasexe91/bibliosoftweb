@@ -1,5 +1,6 @@
 {include 'templates/header.tpl'}
 {include 'templates/navNoLogueado.tpl'}
+<br>
 <div class="container">
     <div class="row justify-content-md-center">
         {foreach from = $listalibros item=libro}
