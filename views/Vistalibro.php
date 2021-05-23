@@ -12,7 +12,7 @@ class vistalibro extends Visor{
     }
 
     function showAll($libros){
-        $this->getSmarty()->assign('libros', $libros);
+        $this->getSmarty()->assign('listalibros', $libros);
         $this->getSmarty()->assign('home', BASE_URL.'libros');
         $this->getSmarty()->display('templates/tarjetas.tpl');
     }
