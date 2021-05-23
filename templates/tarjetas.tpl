@@ -1,6 +1,8 @@
+{include 'templates/header.tpl'}
+{include 'templates/navNoLogueado.tpl'}
 <div class="container">
     <div class="row justify-content-md-center">
-        {foreach from = $arraylibro item=libros}
+        {foreach from = $libros item=libros}
           <div class="col">        
             <div class="card" style="width: 18rem;">
               <img class="w-80 p-3" src={$libros->imagen} class="card-img-top" alt="...">
@@ -13,3 +15,4 @@
         {/foreach}
     </div>
 </div>
+{include 'templates/footer.tpl'}
