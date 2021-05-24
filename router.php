@@ -21,6 +21,12 @@
       case 'registro':
         $controlausuario->mostrarregistro();
         break;
+      case "verlibro":
+        $controlalibro->muestralibro($urlParts[1]);
+        break;
+      default:
+        echo '<h1> Error 404 :´c </h1>';
+        break;
   }
 
 ?>

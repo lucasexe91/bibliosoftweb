@@ -18,6 +18,11 @@ class Controlalibros {
         $categorias = $this->modeloCategorias->getAll();
         $this->vistalibro->showAll($libros,$categorias);
     }
+
+    function muestralibro($id){
+        $libroAver = $this->modelolibro->get($id);
+        $this->vistalibro->showlibro($libroAver);
+    }
 }
 
 ?>

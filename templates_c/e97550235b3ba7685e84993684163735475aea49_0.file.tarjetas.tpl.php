@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-24 06:02:36
+/* Smarty version 3.1.39, created on 2021-05-24 06:24:37
   from 'C:\xampp\htdocs\bibliosoftweb\templates\tarjetas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60ab255cdac849_41924923',
+  'unifunc' => 'content_60ab2a85012794_18315793',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e97550235b3ba7685e84993684163735475aea49' => 
     array (
       0 => 'C:\\xampp\\htdocs\\bibliosoftweb\\templates\\tarjetas.tpl',
-      1 => 1621828951,
+      1 => 1621830268,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_60ab255cdac849_41924923 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60ab2a85012794_18315793 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender('file:templates/navNoLogueado.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender('file:templates/filtros.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -45,7 +45,8 @@ $_smarty_tpl->tpl_vars['libro']->do_else = false;
               <div class="card-body">
                 <h5 class="card-title"><?php echo $_smarty_tpl->tpl_vars['libro']->value->nombre;?>
 </h5>
-                <a href="#" class="btn btn-outline-success">Ver libro</a>
+                <a href="verlibro/<?php echo $_smarty_tpl->tpl_vars['libro']->value->id;?>
+" class="btn btn-outline-success">Ver libro</a>
               </div>
             </div>
           </div>
