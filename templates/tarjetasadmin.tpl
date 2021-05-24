@@ -7,9 +7,7 @@
               <div class="card-body">
                 <h5 class="card-title">{$libros->nombre}</h5>
                 <a href="#" class="btn btn-outline-success">Ver libro</a>
-                
                 <a href="#" class="btn btn-outline-success">Editar libro</a>
-                
                 <a href="#" class="btn btn-outline-danger">Eliminar libro</a>
               </div>
             </div>

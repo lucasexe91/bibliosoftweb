@@ -1,3 +1,6 @@
+{include 'templates/header.tpl'}
+{include 'templates/navNoLogueado.tpl'}
+<br><br> 
     <div class="container-sm">
         <div class="row">
             <div class="col">
@@ -19,3 +22,4 @@
             </div>
         </div>
     </div>
+{include 'templates/footer.tpl'}

@@ -8,8 +8,8 @@ class Controlausuario{
     private $vista;
 
     public function __construct(){
-        $this->$modelo = new ModeloUsuario();
-        $this->$vista = new VistaUsuario();
+        $this->modelo = new ModeloUsuario();
+        $this->vista = new VistaUsuario();
         
     }
     public function mostrarlogin(){

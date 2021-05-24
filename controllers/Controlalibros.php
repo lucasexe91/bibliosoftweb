@@ -10,11 +10,13 @@ class Controlalibros {
     function __construct(){
         $this->modelolibro = new modelolibro();
         $this->vistalibro = new vistalibro();
+        $this->modeloCategorias = new modeloCategorias();
     }
 
     function mostrarlibros(){
         $libros = $this->modelolibro->getAll();
-        $this->vistalibro->showAll($libros);
+        $categorias = $this->modeloCategorias->getAll();
+        $this->vistalibro->showAll($libros,$categorias);
     }
 }
 

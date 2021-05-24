@@ -11,8 +11,8 @@
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorías</a>
         <ul class="dropdown-menu">
-            {foreach from = $arraycategoria item = categorias}
-                <li><a class="dropdown-item" href="#">{$categoria->arraycategoria}</a></li>
+            {foreach from = $listacategorias item = categoria}
+                <li><a class="dropdown-item" href="#">{$categoria->nombre}</a></li>
             {/foreach}
         </ul>
     </li>
