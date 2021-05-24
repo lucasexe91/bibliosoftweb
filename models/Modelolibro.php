@@ -10,12 +10,16 @@ class modelolibro extends Modelo {
     }
 
     function get($id){
-        $query = $this-> getDb()->prepare('SELECT * FROM libros WHERE id = ?');
+        $query = $this-> getDb()->prepare('SELECT * FROM libros WHERE id_libro = ?');
         $query->execute([$id]);
-        echo 'console.log('. json_encode($query->fetch(PDO::FETCH_OBJ)).')';
         return $query->fetch(PDO::FETCH_OBJ);
     }
 
+    function getFiltrado($id){
+        $query = $this-> getDb()->prepare('SELECT * FROM libros WHERE categoria = ?');
+        $query->execute([$id]);
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
 }
 
 class modeloCategorias extends Modelo {
@@ -23,6 +27,12 @@ class modeloCategorias extends Modelo {
         $query = $this-> getDb()->prepare('SELECT * FROM categorias');
         $query->execute();
         return $query->fetchAll(PDO::FETCH_OBJ);
-    }    
+    }
+    
+    function getcategoria($id){
+        $query = $this-> getDb()->prepare('SELECT * FROM categorias WHERE id_categoria = ?');
+        $query->execute([$id]);
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
 }
 ?>

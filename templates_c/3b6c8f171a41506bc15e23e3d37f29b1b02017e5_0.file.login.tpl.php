@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-24 06:02:34
+/* Smarty version 3.1.39, created on 2021-05-24 09:14:53
   from 'C:\xampp\htdocs\bibliosoftweb\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60ab255a4d7e69_88032228',
+  'unifunc' => 'content_60ab526d30d816_63835140',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b6c8f171a41506bc15e23e3d37f29b1b02017e5' => 
     array (
       0 => 'C:\\xampp\\htdocs\\bibliosoftweb\\templates\\login.tpl',
-      1 => 1621828943,
+      1 => 1621836875,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_60ab255a4d7e69_88032228 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60ab526d30d816_63835140 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender('file:templates/navNoLogueado.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

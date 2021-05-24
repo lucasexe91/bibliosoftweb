@@ -21,6 +21,9 @@
       case 'registro':
         $controlausuario->mostrarregistro();
         break;
+      case "filtrado":
+        $controlalibro->filtrarlibros($urlParts[1]);
+        break;
       case "verlibro":
         $controlalibro->muestralibro($urlParts[1]);
         break;

@@ -12,7 +12,7 @@
         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorías</a>
         <ul class="dropdown-menu">
             {foreach from = $listacategorias item = categoria}
-                <li><a class="dropdown-item" href="#">{$categoria->nombre}</a></li>
+                <li><a class="dropdown-item" href="filtrado/{$categoria->id_categoria}">{$categoria->nombre}</a></li>
             {/foreach}
         </ul>
     </li>

@@ -19,9 +19,16 @@ class Controlalibros {
         $this->vistalibro->showAll($libros,$categorias);
     }
 
+    function filtrarlibros($id){
+        $libros = $this->modelolibro->getFiltrado($id);
+        $categorias = $this->modeloCategorias->getAll();
+        $this->vistalibro->showFiltrado($libros,$categorias);
+    }
+
     function muestralibro($id){
         $libroAver = $this->modelolibro->get($id);
-        $this->vistalibro->showlibro($libroAver);
+        $categorias = $this->modeloCategorias->getcategoria($libroAver->categoria);
+        $this->vistalibro->showlibro($libroAver,$categorias);
     }
 }
 

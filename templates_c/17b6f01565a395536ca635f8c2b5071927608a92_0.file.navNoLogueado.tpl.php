@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-24 05:31:42
+/* Smarty version 3.1.39, created on 2021-05-24 08:33:17
   from 'C:\xampp\htdocs\bibliosoftweb\templates\navNoLogueado.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60ab1e1e979211_56009963',
+  'unifunc' => 'content_60ab48ad659db4_69230418',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '17b6f01565a395536ca635f8c2b5071927608a92' => 
     array (
       0 => 'C:\\xampp\\htdocs\\bibliosoftweb\\templates\\navNoLogueado.tpl',
-      1 => 1621827100,
+      1 => 1621836875,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60ab1e1e979211_56009963 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60ab48ad659db4_69230418 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-success">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"><img src="images/Logo (2).png" alt="" width="30" height="24" class="d-inline-block align-text-top"> Bibliosoft</a>
