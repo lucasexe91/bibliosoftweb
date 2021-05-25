@@ -69,6 +69,17 @@ class Controlalibros {
         $listacategorias = $this->modeloCategorias->getAll();
         $this->vistalibro->showCrearlibro($listacategorias);
     }
+
+    function administrarCategorias(){
+        $listacategorias = $this->modeloCategorias->getAll();
+        $this->vistalibro->showAdministrarCategorias($listacategorias);
+    }
+
+    function borrarcategoria($id){
+        $this->modeloCategorias->delete($id);
+        header("Location: " . BASE_URL . 'home');
+    }
+
 }
 
 ?>

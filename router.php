@@ -44,11 +44,18 @@
         break;
       case "borrarLibro":
         $controlalibro->borrarlibro($urlParts[1]);
+        break;
       case "guardarlibronuevo":
         $controlalibro->guardarlibronuevo();
         break;
       case "crearlibronuevo":
         $controlalibro->crearlibronuevo();
+        break;
+      case "administrarCategorias":
+        $controlalibro->administrarCategorias();
+        break;
+      case "borrarcategoria":
+        $controlalibro->borrarcategoria($urlParts[1]);
         break;
       default:
         echo '<h1> Error 404 :´c </h1>';

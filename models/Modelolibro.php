@@ -50,5 +50,11 @@ class modeloCategorias extends Modelo {
         $query->execute([$id]);
         return $query->fetch(PDO::FETCH_OBJ);
     }
+
+    function delete($id){
+        $query = $this->getDb()->prepare('DELETE FROM categorias WHERE id_categoria = ?');
+        $query->execute([$id]);
+    }
+
 }
 ?>

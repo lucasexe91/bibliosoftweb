@@ -4,13 +4,13 @@
 <br><br>
 <div class="container">
     <div class="row justify-content-md-center">
-        {foreach from = $listalibros item=libro}
+        {foreach from = $listacategorias item=categoria}
           <div class="col">        
             <div class="card" style="width: 18rem;">
-              <img class="w-80 p-3" src="{$libro->imagen}" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">{$libro->nombre}</h5>
-                <a href="verlibro/{$libro->id_libro}" class="btn btn-outline-success">Ver libro</a>
+                <h5 class="card-title">{$categoria->nombre}</h5>
+                    <a href="editarcategoria/{$categoria->id_categoria}" class="btn btn-outline-success">Editar</a>
+                    <a href="borrarcategoria/{$categoria->id_categoria}" class="btn btn-outline-danger">Eliminar</a>
               </div>
             </div>
           </div>
