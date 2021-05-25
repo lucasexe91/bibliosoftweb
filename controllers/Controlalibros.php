@@ -40,14 +40,13 @@ class Controlalibros {
         $this->vistalibro->showEditarlibro($libroAver,$listacategorias,$estacategoria);
     }
     
-    function guardarlibro($id){ //solucionar guardar()
+    function guardarlibro($id){ 
         $nombre = $_POST['nombre'];
         $autor = $_POST['autor'];
         $categoria = $_POST['categoria'];
         $descripcion = $_POST['descripcion'];
         $imagen = $_POST['imagen'];
         $this->modelolibro->guardar($id,$nombre,$autor,$categoria,$descripcion,$imagen);
-        print_r(guardado);
         header("Location: " . BASE_URL . 'home');
     }
 

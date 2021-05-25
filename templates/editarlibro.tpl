@@ -15,7 +15,7 @@
                 </div>
               </div>
               <div class="col">
-                <form action="guardarlibro/{$unlibro->idlibro}" method="POST">
+                <form action="guardarlibro/{$unlibro->id_libro}" method="POST">
                 <br>
                 <br>
                 <div class="form-floating mb-3">

@@ -36,7 +36,7 @@
       case "editarlibro":
         $controlalibro->editarlibro($urlParts[1]);
         break;
-      case "guardarlibro": //solucionar guardar()
+      case "guardarlibro": 
         $controlalibro->guardarlibro($urlParts[1]);
         break;
       case "logout":
