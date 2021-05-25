@@ -42,6 +42,14 @@
       case "logout":
         $controlausuario->logout();
         break;
+      case "borrarLibro":
+        $controlalibro->borrarlibro($urlParts[1]);
+      case "guardarlibronuevo":
+        $controlalibro->guardarlibronuevo();
+        break;
+      case "crearlibronuevo":
+        $controlalibro->crearlibronuevo();
+        break;
       default:
         echo '<h1> Error 404 :´c </h1>';
         break;

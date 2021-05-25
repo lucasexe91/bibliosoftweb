@@ -50,6 +50,25 @@ class Controlalibros {
         header("Location: " . BASE_URL . 'home');
     }
 
+    function borrarlibro($id){
+        $this->modelolibro->delete($id);
+        header("Location: " . BASE_URL . 'home');
+    }
+
+    function guardarlibronuevo(){
+        $nombre = $_POST['nombre'];
+        $autor = $_POST['autor'];
+        $categoria = $_POST['categoria'];
+        $descripcion = $_POST['descripcion'];
+        $imagen = $_POST['imagen'];
+        $this->modelolibro->crearlibro($nombre,$autor,$categoria,$descripcion,$imagen);
+        header("Location: " . BASE_URL . 'home');
+    }
+
+    function crearlibronuevo(){
+        $listacategorias = $this->modeloCategorias->getAll();
+        $this->vistalibro->showCrearlibro($listacategorias);
+    }
 }
 
 ?>

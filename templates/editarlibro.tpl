@@ -42,7 +42,7 @@
                   <label for="floatingInput" >URL de imagen</label>
                 </div>
                 <a href="verlibro/{$unlibro->id_libro}" class="btn btn-outline-danger">Cancelar</a>
-                <input class="btn btn-outline-success" type="submit"><!--solucionar guardar()!!!-->
+                <input class="btn btn-outline-success" type="submit">
                 </form>
               </div>
         </div>

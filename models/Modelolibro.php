@@ -25,6 +25,17 @@ class modelolibro extends Modelo {
         $query = $this-> getDb()->prepare('UPDATE libros SET nombre = ?, autor = ?, categoria = ?, descripcion = ?, imagen = ? WHERE id_libro = ?');
         $query->execute([$nombre,$autor,$categoria,$descripcion,$imagen,$id]);
     }
+
+    function delete($id){
+        $query = $this->getDb()->prepare('DELETE FROM libros WHERE id_libro = ?');
+        $query->execute([$id]);
+    }
+
+    function crearlibro($nombre,$autor,$categoria,$descripcion,$imagen){
+        $query = $this->getDb()->prepare( 'INSERT INTO libros (nombre, autor, categoria, descripcion, imagen) VALUES(?,?,?,?,?)');
+        $query->execute([$nombre,$autor,$categoria,$descripcion,$imagen]);
+    }
+
 }
 
 class modeloCategorias extends Modelo {

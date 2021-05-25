@@ -15,6 +15,11 @@
             </div>
           </div>
         {/foreach}
+        {if isset($admin) && $admin }
+          {if $admin == 1 }
+            <a href="crearlibronuevo" class="btn btn-outline-success">Crear libro!</a>
+        {/if}
+        {/if}
     </div>
 </div>
 {include 'templates/footer.tpl'}
