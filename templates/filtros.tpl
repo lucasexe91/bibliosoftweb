@@ -8,6 +8,11 @@
             {foreach from = $listacategorias item = categoria}
                 <li><a class="dropdown-item" href="filtrado/{$categoria->id_categoria}">{$categoria->nombre}</a></li>
             {/foreach}
+            {if isset($admin) && $admin }
+                {if $admin == 1 }
+                    <li><a class="dropdown-item" href="administrarCategorias">Administrar Categorias</a></li>
+              {/if}
+            {/if}
         </ul>
     </li>
 </ul>

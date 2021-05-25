@@ -41,5 +41,14 @@ class AuthHelper {
         }
     }
 
+    public static function adminStatus() {
+        self::start();
+        if (isset($_SESSION['ADMIN'])) {
+            return ($_SESSION['ADMIN']);
+        } else {
+            return false;
+        }
+    }
+
 
 }

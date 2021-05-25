@@ -1,41 +1,50 @@
-<form action="">
+{include 'templates/header.tpl'}
+{include 'templates/nav.tpl'}
       <div class="container">
         <div class="row justify-content-md-center">
-              <div class="col">        
+              <div class="col">
+              <br>       
                 <div class="card" style="width: 18rem;">
-                  <img class="w-80 p-3" src="images/Logo (2).png" class="card-img-top" alt="...">
+                  <img class="w-80 p-3" src="{$unlibro->imagen}" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Nombre de libro</h5>
-                    <p class="card-text">Autor</p>
-                    <p class="card-text">Categoría</p>
-                    <p class="card-text">Descripción</p>
+                    <h5 class="card-title">{$unlibro->nombre}</h5>
+                    <p class="card-text">{$unlibro->autor}</p>
+                    <p class="card-text">{$estacategoria->nombre}</p>
+                    <p class="card-text">{$unlibro->descripcion}</p>
                   </div>
                 </div>
               </div>
               <div class="col">
+                <form action="guardarlibro/{$unlibro->idlibro}" method="POST">
+                <br>
+                <br>
                 <div class="form-floating mb-3">
-                  <input type="titulo" class="form-control" id="floatingInput" placeholder="Titulo">
-                  <label for="floatingInput">Titulo</label>
+                  <input type="titulo" class="form-control" id="floatingInput" placeholder="Titulo" name="nombre">
+                  <label for="floatingInput" >Titulo</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="autor" class="form-control" id="floatingInput" placeholder="Autor">
-                  <label for="floatingInput">Autor</label>
+                  <input type="autor" class="form-control" id="floatingInput" placeholder="Autor" name="autor">
+                  <label for="floatingInput" >Autor</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="categoria" class="form-control" id="floatingInput" placeholder="Categoría">
-                  <label for="floatingInput">Categoría</label>
+                  <select class="form-select" aria-label="Default select example" name="categoria">
+                    {foreach from = $listacategorias item = categoria}
+                      <option value="{$categoria->id_categoria}">{$categoria->nombre}</option>
+                    {/foreach}
+                  </select>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="descripcion" class="form-control" id="floatingInput" placeholder="Descripción">
-                  <label for="floatingInput">Descripción</label>
+                  <input type="descripcion" class="form-control" id="floatingInput" placeholder="Descripción" name="descripcion">
+                  <label for="floatingInput" >Descripción</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="imagen" class="form-control" id="floatingInput" placeholder="Imágen">
-                  <label for="floatingInput">Imágen</label>
+                  <input type="imagen" class="form-control" id="floatingInput" placeholder="Imágen" name="imagen">
+                  <label for="floatingInput" >URL de imagen</label>
                 </div>
-                <a href="#" class="btn btn-outline-danger">Cancelar</a>
-                <button class="btn btn-outline-success" type="submit">Guardar libro</button>
+                <a href="verlibro/{$unlibro->id_libro}" class="btn btn-outline-danger">Cancelar</a>
+                <input class="btn btn-outline-success" type="submit"><!--solucionar guardar()!!!-->
+                </form>
               </div>
         </div>
       </div>
-    </form>
+{include 'templates/footer.tpl'}

@@ -32,6 +32,25 @@ class Controlalibros {
         $categorias = $this->modeloCategorias->getcategoria($libroAver->categoria);
         $this->vistalibro->showlibro($libroAver,$categorias);
     }
+
+    function editarlibro($id){
+        $libroAver = $this->modelolibro->get($id);
+        $listacategorias = $this->modeloCategorias->getAll();
+        $estacategoria = $this->modeloCategorias->getcategoria($libroAver->categoria);
+        $this->vistalibro->showEditarlibro($libroAver,$listacategorias,$estacategoria);
+    }
+    
+    function guardarlibro($id){ //solucionar guardar()
+        $nombre = $_POST['nombre'];
+        $autor = $_POST['autor'];
+        $categoria = $_POST['categoria'];
+        $descripcion = $_POST['descripcion'];
+        $imagen = $_POST['imagen'];
+        $this->modelolibro->guardar($id,$nombre,$autor,$categoria,$descripcion,$imagen);
+        print_r(guardado);
+        header("Location: " . BASE_URL . 'home');
+    }
+
 }
 
 ?>

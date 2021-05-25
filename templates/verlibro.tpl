@@ -11,7 +11,12 @@
                 <p class="card-text">{$unlibro->autor}</p>
                 <p class="card-text">{$unacategoria->nombre}</p>
                 <p class="card-text">{$unlibro->descripcion}</p>
-                
+                {if isset($admin) && $admin }
+                  {if $admin == 1 }
+                    <a href="editarlibro/{$unlibro->id_libro}" class="btn btn-outline-success">Editar</a>
+                    <a href="borrarLibro" class="btn btn-outline-danger">Eliminar</a>
+                {/if}
+                {/if}
                 <a href="" class="btn btn-outline-success">Volver</a>
               </div>
             </div>

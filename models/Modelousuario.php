@@ -9,11 +9,12 @@ class ModeloUsuario extends Modelo {
         return $query->fetch(PDO::FETCH_OBJ);
     }
 
+
     public function add($user, $pass, $admin) {
 
         $passEnc = password_hash($pass, PASSWORD_DEFAULT);
 
-        $query = $this->getDb()->prepare('INSERT INTO usuarios (contraseña, usuario, admin) 
+        $query = $this->getDb()->prepare('INSERT INTO usuarios (contraseña, usuario, numeroadministrador) 
                                             VALUES (?, ?, ?)');
         $query->execute([$passEnc, $user, $admin]);
 

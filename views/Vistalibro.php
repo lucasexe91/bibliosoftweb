@@ -8,6 +8,8 @@ class vistalibro extends Visor{
         parent::__construct();
         $authHelper = new AuthHelper();
         $username = $authHelper->getLoggedUserName();
+        $admin = $authHelper->adminStatus();
+        $this->getSmarty()->assign('admin',$admin);
         $this->getSmarty()->assign('username', $username);
     }
 
@@ -27,5 +29,12 @@ class vistalibro extends Visor{
         $this->getSmarty()->assign('unlibro', $libroAver);
         $this->getSmarty()->assign('unacategoria', $categorias);
         $this->getSmarty()->display('templates/verlibro.tpl');
+    }
+
+    function showEditarlibro($libroAver,$listacategorias,$estacategoria){
+        $this->getSmarty()->assign('unlibro', $libroAver);
+        $this->getSmarty()->assign('estacategoria', $estacategoria);
+        $this->getSmarty()->assign('listacategorias', $listacategorias);
+        $this->getSmarty()->display('templates/editarlibro.tpl');
     }
 }
