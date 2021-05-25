@@ -1,6 +1,6 @@
 {include 'templates/header.tpl'}
-{include 'templates/navNoLogueado.tpl'}
-<br><br>    
+{include 'templates/nav.tpl'}
+<br><br>   
     <div class="container">
     <div class="row justify-content-md-center">
           <div class="col">        
@@ -11,6 +11,7 @@
                 <p class="card-text">{$unlibro->autor}</p>
                 <p class="card-text">{$unacategoria->nombre}</p>
                 <p class="card-text">{$unlibro->descripcion}</p>
+                
                 <a href="" class="btn btn-outline-success">Volver</a>
               </div>
             </div>

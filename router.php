@@ -18,6 +18,9 @@
       case 'login':
         $controlausuario->mostrarlogin();
         break;
+      case 'verify':
+        $controlausuario->verify();
+        break;
       case 'registro':
         $controlausuario->mostrarregistro();
         break;
@@ -29,6 +32,9 @@
         break;
       case "verlibro":
         $controlalibro->muestralibro($urlParts[1]);
+        break;
+      case "logout":
+        $controlausuario->logout();
         break;
       default:
         echo '<h1> Error 404 :´c </h1>';

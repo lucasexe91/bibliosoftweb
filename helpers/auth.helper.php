@@ -15,7 +15,8 @@ class AuthHelper {
         self::start();
         $_SESSION['IS_LOGGED'] = true;
         $_SESSION['ID_USER'] = $user->id;
-        $_SESSION['USERNAME'] = $user->username;
+        $_SESSION['USERNAME'] = $user->usuario;
+        $_SESSION['ADMIN'] = $user->numeroadministrador;
     }
 
     public static function logout() {
@@ -39,5 +40,6 @@ class AuthHelper {
             return false;
         }
     }
+
 
 }

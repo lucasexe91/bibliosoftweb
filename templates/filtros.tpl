@@ -1,12 +1,6 @@
 <ul class="nav justify-content-center">
     <li class="nav-item">
-        <a class="nav-link disabled" aria-current="page" href="#">Filtros</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Ordenar por nombre</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Mostrar en oferta</a>
+        <a class="nav-link disabled" aria-current="page" href="#">Filtro por categoria</a>
     </li>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorías</a>

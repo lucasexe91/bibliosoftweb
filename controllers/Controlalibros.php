@@ -2,6 +2,7 @@
 
 include_once 'models/Modelolibro.php';
 include_once 'views/Vistalibro.php';
+include_once 'models/Modelousuario.php';
 
 class Controlalibros {
     private $modelolibro;
@@ -11,6 +12,7 @@ class Controlalibros {
         $this->modelolibro = new modelolibro();
         $this->vistalibro = new vistalibro();
         $this->modeloCategorias = new modeloCategorias();
+        $this->modelousuario = new ModeloUsuario();
     }
 
     function mostrarlibros(){

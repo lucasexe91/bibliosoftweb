@@ -1,5 +1,5 @@
 {include 'templates/header.tpl'}
-{include 'templates/navNoLogueado.tpl'}
+{include 'templates/nav.tpl'}
 <br><br>
 <div class="container-sm">
 <div class="row">

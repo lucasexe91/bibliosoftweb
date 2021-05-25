@@ -5,7 +5,20 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          {if isset($username) && $username }
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="logout">Cerrar sesión</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{$username}</a>
+            </li>
+          </ul>
+          {else}
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link" href="home">Home</a>
             </li>
@@ -16,6 +29,7 @@
               <a class="nav-link" href="registro">Registrarse</a>
             </li>
           </ul>
+          {/if}
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Buscar Libro" aria-label="Search">
             <button class="btn btn-outline-light" type="submit">Buscar</button>

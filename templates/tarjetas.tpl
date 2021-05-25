@@ -1,5 +1,5 @@
 {include 'templates/header.tpl'}
-{include 'templates/navNoLogueado.tpl'}
+{include 'templates/nav.tpl'}
 {include 'templates/filtros.tpl'}
 <br><br>
 <div class="container">
