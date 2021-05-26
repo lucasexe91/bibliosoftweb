@@ -8,6 +8,7 @@ class VistaUsuario extends Visor {
         parent::__construct();
     }
 
+    //render de logeo
     public function mostrarlogin($error=null) {
         $this->getSmarty()->assign('title', "Login");
         $this->getSmarty()->assign('error', $error);        
@@ -15,6 +16,7 @@ class VistaUsuario extends Visor {
         $this->getSmarty()->display('templates/login.tpl');
     }
 
+    //render de formulario de registro
     public function mostrarregistro($error=null) {
         $this->getSmarty()->assign('title', "Login");
         $this->getSmarty()->assign('error', $error);        

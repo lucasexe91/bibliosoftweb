@@ -1,4 +1,2 @@
-*copiar ulr donde esta la tarjeta para pegarla en el boton "volver" asi se vuelve a donde estaba
-*hacer login logout.
-*registrarse.
-*privilegios de admin ( administrar items y categorias:listar,agregar, editar y eliminar )
+
+*privilegios de admin ( administrar categorias:agregar)

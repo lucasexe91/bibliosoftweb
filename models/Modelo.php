@@ -10,8 +10,6 @@ class Modelo {
     }
 
     public function create_connection() {
-
-        // Atencion: Modificar esto segun la instalacion:
         $host = 'localhost';
         $userName = 'root';
         $password = '';

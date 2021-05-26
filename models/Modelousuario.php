@@ -3,13 +3,14 @@
 require_once('Modelo.php');
 
 class ModeloUsuario extends Modelo {
+    //recupera todos los usuarios por medio de la variable $username
     public function getUserByUsername($username) {
         $query = $this->getDb()->prepare('SELECT * FROM usuarios WHERE usuario = ?');
         $query->execute([$username]);
         return $query->fetch(PDO::FETCH_OBJ);
     }
 
-
+    //hasheo de contraseña y creacion de usuario en base de datos
     public function add($user, $pass, $admin) {
 
         $passEnc = password_hash($pass, PASSWORD_DEFAULT);

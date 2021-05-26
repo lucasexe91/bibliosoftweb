@@ -12,14 +12,18 @@ class Controlausuario{
         $this->vista = new VistaUsuario();
         
     }
+
+    //muestra en el nav la sesion
     public function mostrarlogin(){
         $this->vista->mostrarlogin();
     }
 
+    //muestra el render para registrarse
     public function mostrarregistro(){
         $this->vista->mostrarregistro();
     }
 
+    //creacion de usuario
     public function registrar(){
         $user = $_POST['username'];
         $pass = $_POST['password'];
@@ -28,11 +32,13 @@ class Controlausuario{
         header("Location: " . BASE_URL . 'home');
     }
 
+    //cierra sesion
     public function logout(){
         AuthHelper::logout();
         header("Location: " . BASE_URL . 'home');
     }
 
+    //verificacion de contraseña y usuario
     public function verify() {
         if(!empty($_POST['username']) && !empty($_POST['password'])) {
             $user = $_POST['username'];
