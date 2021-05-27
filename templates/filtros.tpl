@@ -18,7 +18,7 @@
             {/foreach}
             {if isset($admin) && $admin }
                 {if $admin == 1 }
-                    <li><a class="dropdown-item" href="administrarCategorias">Administrar Categorias</a></li>
+                    <li><a class="dropdown-item" href="administrarCategorias" style="color:red;">Administrar Categorias</a></li>
                 {/if}
             {/if}
         </ul>

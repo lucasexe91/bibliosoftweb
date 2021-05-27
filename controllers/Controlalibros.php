@@ -92,6 +92,19 @@ class Controlalibros {
         header("Location: " . BASE_URL . 'home');
     }
 
+    //formulario de agregar una categoria
+    function agregarCategoria(){
+        $this->vistalibro->vistaAgregarCategoria();
+    }
+
+    //guarda una nueva categoria
+    function guardarcategorianueva(){
+        $nombre = $_POST['nombre'];
+        print_r($nombre);
+        $this->modeloCategorias->crearcategoria($nombre);
+        header("Location: " . BASE_URL . 'home');
+    }
+
 }
 
 ?>

@@ -16,5 +16,7 @@
           </div>
         {/foreach}
     </div>
+    <br>
+    <a href="agregarcategoria" class="btn btn-outline-success">Agregar una categoria</a>
 </div>
 {include 'templates/footer.tpl'}

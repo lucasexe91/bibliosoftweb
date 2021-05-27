@@ -53,4 +53,10 @@ class vistalibro extends Visor{
         $this->getSmarty()->assign('listacategorias',$listacategorias);
         $this->getSmarty()->display('templates/editarcategorias.tpl');
     }
+
+    //muestra el formulario de agregar una categoria
+    function vistaAgregarCategoria(){
+        $this->getSmarty()->display('crearCategoria.tpl');
+    }
+
 }

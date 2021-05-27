@@ -54,6 +54,12 @@
       case "administrarCategorias":
         $controlalibro->administrarCategorias();
         break;
+      case "agregarcategoria":
+        $controlalibro->agregarCategoria();
+        break;
+      case "crearcategorianueva":
+        $controlalibro->guardarcategorianueva();
+        break;
       case "borrarcategoria":
         $controlalibro->borrarcategoria($urlParts[1]);
         break;

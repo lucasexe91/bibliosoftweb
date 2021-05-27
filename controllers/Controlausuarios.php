@@ -10,7 +10,6 @@ class Controlausuario{
     public function __construct(){
         $this->modelo = new ModeloUsuario();
         $this->vista = new VistaUsuario();
-        
     }
 
     //muestra en el nav la sesion

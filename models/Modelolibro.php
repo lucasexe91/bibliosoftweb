@@ -47,7 +47,7 @@ class modelolibro extends Modelo {
 class modeloCategorias extends Modelo {
     //recupera todas las categorias
     function getAll(){
-        $query = $this-> getDb()->prepare('SELECT * FROM categorias');
+        $query = $this-> getDb()->prepare('SELECT * FROM categorias ORDER BY nombre ASC');
         $query->execute();
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
@@ -65,5 +65,10 @@ class modeloCategorias extends Modelo {
         $query->execute([$id]);
     }
 
+    //crea una categoria
+    function crearcategoria($nombre){
+        $query = $this->getDb()->prepare( 'INSERT INTO categorias (nombre) VALUES(?)');
+        $query->execute([$nombre]);
+    }
 }
 ?>
