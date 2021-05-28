@@ -19,12 +19,12 @@
                 <br>
                 <br>
                 <div class="form-floating mb-3">
-                  <input type="titulo" class="form-control" id="floatingInput" placeholder="{$unlibro->nombre}" name="nombre">
-                  <label for="floatingInput" >{$unlibro->nombre}</label>
+                  <input type="titulo" class="form-control" id="floatingInput" placeholder="Titulo" name="nombre">
+                  <label for="floatingInput" >Titulo</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="autor" class="form-control" id="floatingInput" placeholder="{$unlibro->autor}" name="autor">
-                  <label for="floatingInput" >{$unlibro->autor}</label>
+                  <input type="autor" class="form-control" id="floatingInput" placeholder="Autor" name="autor">
+                  <label for="floatingInput" >Autor}</label>
                 </div>
                 <div class="form-floating mb-3">
                   <select class="form-select" aria-label="Default select example" name="categoria">
