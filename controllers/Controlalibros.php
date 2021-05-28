@@ -105,6 +105,16 @@ class Controlalibros {
         header("Location: " . BASE_URL . 'home');
     }
 
+    function editarUnaCategoria($id){
+        $categoriaAeditar = $this->modeloCategorias->getcategoria($id);
+        $this->vistalibro->vistaEditarUnaCategoria($categoriaAeditar);
+    }
+
+    function guardarcambioscategoria($id){
+        $nombre = $_POST['nombre'];
+        $this->modeloCategorias->guardarCambiosCategoria($id,$nombre);
+         header("Location: " . BASE_URL . 'administrarCategorias');
+    }
 }
 
 ?>

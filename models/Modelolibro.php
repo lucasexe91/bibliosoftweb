@@ -70,5 +70,11 @@ class modeloCategorias extends Modelo {
         $query = $this->getDb()->prepare( 'INSERT INTO categorias (nombre) VALUES(?)');
         $query->execute([$nombre]);
     }
+
+    //guarda los cambios en la categoria
+    function guardarCambiosCategoria($id,$nombre){
+        $query = $this-> getDb()->prepare('UPDATE categorias SET nombre = ? WHERE id_categoria = ?');
+        $query->execute([$nombre,$id]);
+    }
 }
 ?>

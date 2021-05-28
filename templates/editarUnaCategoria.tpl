@@ -4,12 +4,12 @@
 <div class="row justify-content-md-center">
     <div class="col"></div>
     <div class="col-6">
-        <form action="editarcategoria" method="POST">
+        <form action="guardarcambioscategoria/{$datoscategoria->id_categoria}" method="POST">
             <br>
             <br>
             <div class="form-floating mb-3">
-                <input type="titulo" class="form-control" id="floatingInput" placeholder="nombre de categoria nueva" name="nombre">
-                <label for="floatingInput">nombre de categoria nueva</label>
+                <input type="Titulo" class="form-control" id="floatingInput" placeholder="{$datoscategoria->nombre}" name="nombre">
+                <label for="floatingInput">{$datoscategoria->nombre}</label>
             </div>
             <a href="administrarCategorias" class="btn btn-outline-danger">Cancelar</a>
             <input class="btn btn-outline-success" type="submit">

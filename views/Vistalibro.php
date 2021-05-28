@@ -59,4 +59,9 @@ class vistalibro extends Visor{
         $this->getSmarty()->display('crearCategoria.tpl');
     }
 
+    function vistaEditarUnaCategoria($categoriaAeditar){
+        $this->getSmarty()->assign('datoscategoria',$categoriaAeditar);
+        $this->getSmarty()->display('templates/editarUnaCategoria.tpl');
+    }
+
 }

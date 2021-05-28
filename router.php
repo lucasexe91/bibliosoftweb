@@ -60,6 +60,12 @@
       case "crearcategorianueva":
         $controlalibro->guardarcategorianueva();
         break;
+      case "editarcategoria":
+        $controlalibro->editarUnaCategoria($urlParts[1]);
+        break;
+      case "guardarcambioscategoria":
+        $controlalibro->guardarcambioscategoria($urlParts[1]);
+        break;
       case "borrarcategoria":
         $controlalibro->borrarcategoria($urlParts[1]);
         break;
