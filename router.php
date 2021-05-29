@@ -69,6 +69,9 @@
       case "borrarcategoria":
         $controlalibro->borrarcategoria($urlParts[1]);
         break;
+      case "buscartitulo":
+        $controlalibro->buscatitulo();
+        break;
       default:
         echo '<h1> Error 404 :´c </h1>';
         break;

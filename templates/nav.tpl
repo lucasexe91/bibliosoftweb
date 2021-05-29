@@ -30,6 +30,10 @@
             </li>
           </ul>
           {/if}
+          <form action="buscartitulo" method="POST" class="d-flex">
+            <input name="titulo" class="form-control me-2" type="search" placeholder="Buscar por titulo" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Buscar</button>
+          </form>
         </div>
       </div>
 </nav>

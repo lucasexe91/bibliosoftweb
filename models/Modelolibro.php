@@ -16,6 +16,12 @@ class modelolibro extends Modelo {
         $query->execute([$id]);
         return $query->fetch(PDO::FETCH_OBJ);
     }
+    //recupera el libro por titulo
+    function gettitulo($titulo){
+        $query = $this-> getDb()->prepare('SELECT * FROM libros WHERE nombre = ?');
+        $query->execute([$titulo]);
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
 
     //recupera todos los libros de misma categoria por id
     function getFiltrado($id){

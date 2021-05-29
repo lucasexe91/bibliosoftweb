@@ -30,6 +30,13 @@ class Controlalibros {
         $categorias = $this->modeloCategorias->getAll();
         $this->vistalibro->showFiltrado($libros,$categorias);
     }
+    //filtra el libro por titulo
+    function buscatitulo(){
+        $titulo = $_POST['titulo'];
+        $libro = $this->modelolibro->gettitulo($titulo);
+        $categorias = $this->modeloCategorias->getAll();
+        $this->vistalibro->showFiltrado($libro,$categorias);
+    }
 
     //tarjeta especifica del libro "ver el libro"
     function muestralibro($id){
