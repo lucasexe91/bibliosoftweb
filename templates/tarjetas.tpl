@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row justify-content-md-center">
         {foreach from = $listalibros item=libro}
-          <div class="col">        
+          <div class="col gy-2">        
             <div class="card" style="width: 18rem;">
               <img class="w-80 p-3" src="{$libro->imagen}" class="card-img-top" alt="...">
               <div class="card-body">
