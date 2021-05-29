@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row justify-content-md-center">
         {foreach from = $listacategorias item=categoria}
-          <div class="col">        
+          <div class="col gy-2">        
             <div class="card" style="width: 18rem;">
               <div class="card-body">
                 <h5 class="card-title">{$categoria->nombre}</h5>
@@ -16,7 +16,11 @@
           </div>
         {/foreach}
     </div>
-    <br>
-    <a href="agregarcategoria" class="btn btn-outline-success">Agregar una categoria</a>
+      <div class="container">
+      <br>
+      <a href="agregarcategoria" class="btn btn-outline-success">Agregar una categoria</a>
+      <br>
+      <br>
+    </div>
 </div>
 {include 'templates/footer.tpl'}
