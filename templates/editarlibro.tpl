@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-floating mb-3">
                   <input type="autor" class="form-control" id="floatingInput" placeholder="Autor" name="autor">
-                  <label for="floatingInput" >Autor}</label>
+                  <label for="floatingInput" >Autor</label>
                 </div>
                 <div class="form-floating mb-3">
                   <select class="form-select" aria-label="Default select example" name="categoria">
