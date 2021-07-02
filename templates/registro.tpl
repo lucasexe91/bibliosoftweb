@@ -15,11 +15,6 @@
               <label for="exampleInputPassword1" class="form-label">Contraseña</label>
               <input type="password" name="password" class="form-control" id="exampleInputPassword1">
             </div>
-              <select class="form-select" aria-label="Default select example" name="admin">
-                <option value="1">administrador</option> 
-                <option value="0">no administrador</option> 
-              </select>
-            <br>
             <input type="submit" class="btn btn-outline-success">
         </form>
     </div>

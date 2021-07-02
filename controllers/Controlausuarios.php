@@ -26,9 +26,8 @@ class Controlausuario{
     public function registrar(){
         $user = $_POST['username'];
         $pass = $_POST['password'];
-        $admin = $_POST['admin'];
-        $this->modelo->add($user,$pass,$admin);
-        header("Location: " . BASE_URL . 'home');
+        $this->modelo->add($user,$pass);
+        $this->verify();
     }
 
     //cierra sesion

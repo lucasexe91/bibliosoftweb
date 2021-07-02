@@ -11,13 +11,13 @@ class ModeloUsuario extends Modelo {
     }
 
     //hasheo de contraseña y creacion de usuario en base de datos
-    public function add($user, $pass, $admin) {
+    public function add($user, $pass) {
 
         $passEnc = password_hash($pass, PASSWORD_DEFAULT);
 
         $query = $this->getDb()->prepare('INSERT INTO usuarios (contraseña, usuario, numeroadministrador) 
-                                            VALUES (?, ?, ?)');
-        $query->execute([$passEnc, $user, $admin]);
+                                            VALUES (?, ?, 0)');
+        $query->execute([$passEnc, $user]);
 
     }
 }
