@@ -14,7 +14,7 @@ class VistaUsuario extends Visor {
     }
 
     //render de logeo
-    public function mostrarlogin($error=null) {
+    function mostrarlogin($error=null) {
         $this->getSmarty()->assign('title', "Login");
         $this->getSmarty()->assign('error', $error);        
         $this->getSmarty()->assign('home', BASE_URL.'home');
@@ -22,15 +22,20 @@ class VistaUsuario extends Visor {
     }
 
     //render de formulario de registro
-    public function mostrarregistro($error=null) {
+    function mostrarregistro($error=null) {
         $this->getSmarty()->assign('title', "Login");
         $this->getSmarty()->assign('error', $error);        
         $this->getSmarty()->assign('home', BASE_URL.'home');
         $this->getSmarty()->display('templates/registro.tpl');
     }
-    public function showadministrarusuarios($listausuarios, $categorias){
+    function showadministrarusuarios($listausuarios, $categorias){
         $this->getSmarty()->assign('listausuarios', $listausuarios);
         $this->getSmarty()->assign('listacategorias',$categorias);
         $this->getSmarty()->display('templates/administrarusuarios.tpl');
+    }
+    function showeditarusuario($usuario, $categorias){
+        $this->getSmarty()->assign('esteusuario',$usuario);
+        $this->getSmarty()->assign('listacategorias',$categorias);
+        $this->getSmarty()->display('templates/editarusuario.tpl');
     }   
 }

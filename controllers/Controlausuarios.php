@@ -55,9 +55,27 @@ class Controlausuario{
             $this->vistausuario->mostrarlogin("Login incompleto");
         }
     }
-    function muestrausuarios(){
+    public function muestrausuarios(){
         $categorias = $this->modelocategoria->getAll();
         $listausuarios = $this->modelousuario->getAll();
         $this->vistausuario->showadministrarusuarios($listausuarios,$categorias);
     }
+    public function borrarusuario($id){
+        $this->modelousuario->delete($id);
+        header("Location: " . BASE_URL . 'home');
+    }
+    public function editarusuario($id){
+        $usuario = $this->modelousuario->getUserById($id);
+        $categorias = $this->modelocategoria->getAll();
+        $this->vistausuario->showeditarusuario($usuario, $categorias);
+    }
+    public function guardarusuario($id){
+        $usuario = $_POST['usuario'];
+        $admin = $_POST['admin'];
+        $this->modelousuario->guardarusuario($usuario, $admin, $id);
+        header("Location: " . BASE_URL . 'home');
+    }
+    
+    
+
 }

@@ -77,6 +77,15 @@
       case "administrarusuarios":
         $controlausuario->muestrausuarios();
         break;
+      case "borrarusuario":
+        $controlausuario->borrarusuario($urlParts[1]);
+        break;
+      case "editarusuario":
+        $controlausuario->editarusuario($urlParts[1]);
+        break;
+      case "guardarcambiosusuario":
+        $controlausuario->guardarusuario($urlParts[1]);
+        break;
       default:
         echo '<h1> Error 404 :´c </h1>';
         break;

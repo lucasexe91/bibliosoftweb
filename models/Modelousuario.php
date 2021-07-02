@@ -20,9 +20,22 @@ class ModeloUsuario extends Modelo {
         $query->execute([$passEnc, $user]);
 
     }
-    function getAll(){
+    public function getAll(){
         $query = $this-> getDb()->prepare('SELECT * FROM usuarios ORDER BY usuario ASC');
         $query->execute();
         return $query->fetchAll(PDO::FETCH_OBJ);
+    }
+    public function delete($id){
+        $query = $this->getDb()->prepare('DELETE FROM usuarios WHERE id = ?');
+        $query->execute([$id]);
+    }
+    public function getUserById($id){
+        $query = $this->getDb()->prepare('SELECT * FROM usuarios WHERE id = ?');
+        $query->execute([$id]);
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
+    public function guardarusuario($usuario, $admin, $id){
+        $query = $this-> getDb()->prepare('UPDATE usuarios SET usuario = ?, numeroadministrador = ? WHERE id = ?');
+        $query->execute([$usuario, $admin ,$id]);
     }
 }
