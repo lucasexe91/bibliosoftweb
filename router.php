@@ -3,6 +3,7 @@
 
   require_once('controllers/Controlalibros.php');
   require_once('controllers/Controlausuarios.php');
+  require_once('controllers/Controlacategorias.php');
   
   if($_GET['action']=='')
     $_GET['action']= 'home';
@@ -10,6 +11,7 @@
   $urlParts = explode('/',$_GET['action']);
   $controlalibro = new Controlalibros();
   $controlausuario = new Controlausuario();
+  $controlacategorias = new Controlacategorias();
 
   switch($urlParts[0]){
       case 'home':
@@ -52,25 +54,25 @@
         $controlalibro->crearlibronuevo();
         break;
       case "administrarCategorias":
-        $controlalibro->administrarCategorias();
+        $controlacategorias->administrarCategorias();
         break;
       case "agregarcategoria":
-        $controlalibro->agregarCategoria();
+        $controlacategorias->agregarCategoria();
         break;
       case "crearcategorianueva":
-        $controlalibro->guardarcategorianueva();
+        $controlacategorias->guardarcategorianueva();
         break;
       case "editarcategoria":
-        $controlalibro->editarUnaCategoria($urlParts[1]);
+        $controlacategorias->editarUnaCategoria($urlParts[1]);
         break;
       case "guardarcambioscategoria":
-        $controlalibro->guardarcambioscategoria($urlParts[1]);
+        $controlacategorias->guardarcambioscategoria($urlParts[1]);
         break;
       case "borrarcategoria":
-        $controlalibro->borrarcategoria($urlParts[1]);
+        $controlacategorias->borrarcategoria($urlParts[1]);
         break;
       case "buscartitulo":
-        $controlalibro->buscatitulo();
+        $controlacategorias->buscatitulo();
         break;
       default:
         echo '<h1> Error 404 :´c </h1>';

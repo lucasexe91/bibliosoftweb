@@ -42,26 +42,4 @@ class vistalibro extends Visor{
         $this->getSmarty()->display('templates/editarlibro.tpl');
     }
 
-    //muestra formulario de creacion de libro
-    function showCrearlibro($listacategorias){
-        $this->getSmarty()->assign('listacategorias',$listacategorias);
-        $this->getSmarty()->display('templates/crearlibro.tpl');
-    }
-
-    //muestra categorias y botones de edicion
-    function showAdministrarCategorias($listacategorias){
-        $this->getSmarty()->assign('listacategorias',$listacategorias);
-        $this->getSmarty()->display('templates/editarcategorias.tpl');
-    }
-
-    //muestra el formulario de agregar una categoria
-    function vistaAgregarCategoria(){
-        $this->getSmarty()->display('crearCategoria.tpl');
-    }
-
-    function vistaEditarUnaCategoria($categoriaAeditar){
-        $this->getSmarty()->assign('datoscategoria',$categoriaAeditar);
-        $this->getSmarty()->display('templates/editarUnaCategoria.tpl');
-    }
-
 }

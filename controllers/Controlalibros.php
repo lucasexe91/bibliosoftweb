@@ -3,6 +3,7 @@
 include_once 'models/Modelolibro.php';
 include_once 'views/Vistalibro.php';
 include_once 'models/Modelousuario.php';
+include_once 'models/Modelocategorias.php';
 
 class Controlalibros {
     private $modelolibro;
@@ -13,8 +14,8 @@ class Controlalibros {
     function __construct(){
         $this->modelolibro = new modelolibro();
         $this->vistalibro = new vistalibro();
-        $this->modeloCategorias = new modeloCategorias();
         $this->modelousuario = new ModeloUsuario();
+        $this->modeloCategorias = new modeloCategorias();
     }
 
     //arma las tarjetas de "home"
@@ -86,42 +87,5 @@ class Controlalibros {
         $listacategorias = $this->modeloCategorias->getAll();
         $this->vistalibro->showCrearlibro($listacategorias);
     }
-
-    //edicion de categorias
-    function administrarCategorias(){
-        $listacategorias = $this->modeloCategorias->getAll();
-        $this->vistalibro->showAdministrarCategorias($listacategorias);
-    }
-
-    //borra una categoria por id
-    function borrarcategoria($id){
-        $this->modeloCategorias->delete($id);
-        header("Location: " . BASE_URL . 'home');
-    }
-
-    //formulario de agregar una categoria
-    function agregarCategoria(){
-        $this->vistalibro->vistaAgregarCategoria();
-    }
-
-    //guarda una nueva categoria
-    function guardarcategorianueva(){
-        $nombre = $_POST['nombre'];
-        print_r($nombre);
-        $this->modeloCategorias->crearcategoria($nombre);
-        header("Location: " . BASE_URL . 'home');
-    }
-
-    function editarUnaCategoria($id){
-        $categoriaAeditar = $this->modeloCategorias->getcategoria($id);
-        $this->vistalibro->vistaEditarUnaCategoria($categoriaAeditar);
-    }
-
-    function guardarcambioscategoria($id){
-        $nombre = $_POST['nombre'];
-        $this->modeloCategorias->guardarCambiosCategoria($id,$nombre);
-         header("Location: " . BASE_URL . 'administrarCategorias');
-    }
 }
-
 ?>
