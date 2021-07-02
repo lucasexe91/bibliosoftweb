@@ -74,6 +74,9 @@
       case "buscartitulo":
         $controlacategorias->buscatitulo();
         break;
+      case "administrarusuarios":
+        $controlausuario->muestrausuarios();
+        break;
       default:
         echo '<h1> Error 404 :´c </h1>';
         break;

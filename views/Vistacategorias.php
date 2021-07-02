@@ -13,11 +13,6 @@ class vistacategorias extends Visor{
         $this->getSmarty()->assign('username', $username);
     }
 
-    function showCrearlibro($listacategorias){
-        $this->getSmarty()->assign('listacategorias',$listacategorias);
-        $this->getSmarty()->display('templates/crearlibro.tpl');
-    }
-
     //muestra categorias y botones de edicion
     function showAdministrarCategorias($listacategorias){
         $this->getSmarty()->assign('listacategorias',$listacategorias);

@@ -4,6 +4,9 @@
             <li class="nav-item">
             <a href="crearlibronuevo" class="nav-link">Crear libro!</a>
             </li>
+            <li class="nav-item">
+            <a href="administrarusuarios" class="nav-link">Administrar usuarios</a>
+            </li>
         {/if}
     {/if}
     <li class="nav-item">

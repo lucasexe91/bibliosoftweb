@@ -2,31 +2,34 @@
 
 include_once('views/Vistausuario.php');
 include_once('models/Modelousuario.php');
+include_once('models/Modelocategorias.php');
 
 class Controlausuario{
-    private $modelo;
-    private $vista;
+    private $modelousuario;
+    private $vistausuario;
+    private $modelocategoria;
 
     public function __construct(){
-        $this->modelo = new ModeloUsuario();
-        $this->vista = new VistaUsuario();
+        $this->modelousuario = new ModeloUsuario();
+        $this->modelocategoria = new modeloCategorias();
+        $this->vistausuario = new VistaUsuario();
     }
 
     //muestra en el nav la sesion
     public function mostrarlogin(){
-        $this->vista->mostrarlogin();
+        $this->vistausuario->mostrarlogin();
     }
 
     //muestra el render para registrarse
     public function mostrarregistro(){
-        $this->vista->mostrarregistro();
+        $this->vistausuario->mostrarregistro();
     }
 
     //creacion de usuario
     public function registrar(){
         $user = $_POST['username'];
         $pass = $_POST['password'];
-        $this->modelo->add($user,$pass);
+        $this->modelousuario->add($user,$pass);
         $this->verify();
     }
 
@@ -41,15 +44,20 @@ class Controlausuario{
         if(!empty($_POST['username']) && !empty($_POST['password'])) {
             $user = $_POST['username'];
             $pass = $_POST['password'];
-            $userDb = $this->modelo->getUserByUsername($user);
+            $userDb = $this->modelousuario->getUserByUsername($user);
 
             if (!empty($userDb) && password_verify($pass, $userDb->contraseña)) {
                 AuthHelper::login($userDb);
                 header('Location: ' . BASE_URL . "home");
             } else 
-                $this->vista->mostrarlogin("Login incorrecto, password o usuario incorrecto");
+                $this->vistausuario->mostrarlogin("Login incorrecto, password o usuario incorrecto");
         } else {
-            $this->vista->mostrarlogin("Login incompleto");
+            $this->vistausuario->mostrarlogin("Login incompleto");
         }
+    }
+    function muestrausuarios(){
+        $categorias = $this->modelocategoria->getAll();
+        $listausuarios = $this->modelousuario->getAll();
+        $this->vistausuario->showadministrarusuarios($listausuarios,$categorias);
     }
 }

@@ -20,4 +20,9 @@ class ModeloUsuario extends Modelo {
         $query->execute([$passEnc, $user]);
 
     }
+    function getAll(){
+        $query = $this-> getDb()->prepare('SELECT * FROM usuarios ORDER BY usuario ASC');
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
 }
