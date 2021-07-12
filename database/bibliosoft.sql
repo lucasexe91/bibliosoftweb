@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-07-2021 a las 21:33:01
+-- Tiempo de generación: 12-07-2021 a las 23:03:21
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.1
 
@@ -60,8 +60,15 @@ CREATE TABLE `comentarios` (
   `comentario` varchar(200) NOT NULL,
   `calificacion` int(5) NOT NULL,
   `idlibro` int(11) NOT NULL,
-  `usuario` varchar(200) NOT NULL
+  `usuario` int(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `comentarios`
+--
+
+INSERT INTO `comentarios` (`id_comentario`, `comentario`, `calificacion`, `idlibro`, `usuario`) VALUES
+(1, 'AGUANTE SMEAGOL!', 5, 1, 5);
 
 -- --------------------------------------------------------
 
@@ -135,7 +142,8 @@ ALTER TABLE `categorias`
 --
 ALTER TABLE `comentarios`
   ADD PRIMARY KEY (`id_comentario`),
-  ADD KEY `comentario-libro` (`idlibro`);
+  ADD KEY `comentario-libro` (`idlibro`),
+  ADD KEY `comentario-usuario` (`usuario`);
 
 --
 -- Indices de la tabla `libros`
@@ -164,7 +172,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `libros`
@@ -186,7 +194,8 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  ADD CONSTRAINT `comentario-libro` FOREIGN KEY (`idlibro`) REFERENCES `libros` (`id_libro`);
+  ADD CONSTRAINT `comentario-libro` FOREIGN KEY (`idlibro`) REFERENCES `libros` (`id_libro`),
+  ADD CONSTRAINT `comentario-usuario` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id`);
 
 --
 -- Filtros para la tabla `libros`
