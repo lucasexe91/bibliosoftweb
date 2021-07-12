@@ -1,2 +1,0 @@
-
-*privilegios de admin ( administrar categorias:agregar)
