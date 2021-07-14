@@ -72,7 +72,7 @@
         $controlacategorias->borrarcategoria($urlParts[1]);
         break;
       case "buscartitulo":
-        $controlacategorias->buscatitulo();
+        $controlalibro->buscatitulo();
         break;
       case "administrarusuarios":
         $controlausuario->muestrausuarios();
