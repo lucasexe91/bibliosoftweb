@@ -28,9 +28,11 @@ class vistalibro extends Visor{
     }
 
     //muestra un libro especifico
-    function showlibro($libroAver,$categorias){
+    function showlibro($libroAver,$categorias,$comentarios,$usuarios){
         $this->getSmarty()->assign('unlibro', $libroAver);
         $this->getSmarty()->assign('unacategoria', $categorias);
+        $this->getSmarty()->assign('listacomentarios', $comentarios);
+        $this->getSmarty()->assign('listausuarios', $usuarios);
         $this->getSmarty()->display('templates/verlibro.tpl');
     }
 

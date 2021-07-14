@@ -9,13 +9,13 @@ class modelolibro extends Modelo {
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
-
     //recupera el libro por id
     function get($id){
         $query = $this-> getDb()->prepare('SELECT * FROM libros WHERE id_libro = ?');
         $query->execute([$id]);
         return $query->fetch(PDO::FETCH_OBJ);
     }
+    
     //recupera el libro por titulo
     function gettitulo($titulo){
         $query = $this-> getDb()->prepare('SELECT * FROM libros WHERE nombre = ?');
