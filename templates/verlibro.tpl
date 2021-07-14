@@ -48,21 +48,22 @@
                     </ol>
                     <br>
                     <div class="container border border-sucess rounded">
-                    <form action="/api/comentar" method="POST">
+                    <form action="/api/comentar/{$unlibro->id_libro}/{$username}" method="POST">
                         <br>
                         <legend>
                           Deja tu Comentario y calificación!
                         </legend>
                         <br>
                         <div class="form-group">
-                          <label>escribe tu comentario aqui</label>
+                          <label>Escribe tu comentario aqui</label>
                           <textarea type="comentario" rows="3" class="form-control" id="floatingInput" placeholder="comentario" name="comentario"></textarea>
                         </div>
-                        <label class="form-label">
+                        <br>
+                        <div class="form-group">
+                        <label>
                             Calificación
                         </label>
-                        <div class="mb-3">
-                          <select class="form-select" aria-label="Default select example" name="categoria">
+                          <select class="form-select" aria-label="Default select example" name="calificacion">
                               <option value="1">1</option>
                               <option value="1">2</option>
                               <option value="1">3</option>
@@ -70,7 +71,10 @@
                               <option value="1">5</option>
                           </select>
                         </div>
-                        <input class="btn btn-outline-success" type="submit">
+                        <br>
+                        <div class="form-group">
+                          <input class="btn btn-outline-success" type="submit">
+                        </div>
                     </form>
                     <br>
                     </div>

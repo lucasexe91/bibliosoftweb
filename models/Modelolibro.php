@@ -43,10 +43,20 @@ class modelolibro extends Modelo {
     }
 
     //crea un nuevo libro en la base de datos
-    function crearlibro($nombre,$autor,$categoria,$descripcion,$imagen){
+    function crearlibro($nombre,$autor,$categoria,$descripcion,$image = NULL){
+        $pathImg = null;
+        if ($image)
+            $pathImg = $this->uploadImage($image);
+
         $query = $this->getDb()->prepare( 'INSERT INTO libros (nombre, autor, categoria, descripcion, imagen) VALUES(?,?,?,?,?)');
-        $query->execute([$nombre,$autor,$categoria,$descripcion,$imagen]);
+        $query->execute([$nombre,$autor,$categoria,$descripcion,$pathImg]);
     }
 
+    //carga imagen al servidor y retorna su URL
+    function uploadImage($image) {
+        $target = 'images/' . uniqid() . '.jpg';
+        move_uploaded_file($image, $target);
+        return $target;
+    }
 }
 ?>

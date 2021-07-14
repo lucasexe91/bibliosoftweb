@@ -4,7 +4,7 @@
 <div class="row justify-content-md-center">
     <div class="col"></div>
     <div class="col-6">
-        <form action="guardarlibronuevo" method="POST">
+        <form action="guardarlibronuevo" method="POST" enctype="multipart/form-data">
             <br>
             <br>
             <div class="form-floating mb-3">
@@ -27,9 +27,9 @@
                     name="descripcion">
                 <label for="floatingInput">Descripción</label>
             </div>
-            <div class="form-floating mb-3">
-                <input type="imagen" class="form-control" id="floatingInput" placeholder="Imágen" name="imagen">
-                <label for="floatingInput">URL de imagen</label>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Imagen</label>
+                <input class="form-control" type="file" id="formFile" name="imagen">
             </div>
             <a href="home" class="btn btn-outline-danger">Cancelar</a>
             <input class="btn btn-outline-success" type="submit">

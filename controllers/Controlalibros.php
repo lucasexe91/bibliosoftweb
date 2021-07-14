@@ -82,9 +82,13 @@ class Controlalibros {
         $autor = $_POST['autor'];
         $categoria = $_POST['categoria'];
         $descripcion = $_POST['descripcion'];
-        $imagen = $_POST['imagen'];
-        $this->modelolibro->crearlibro($nombre,$autor,$categoria,$descripcion,$imagen);
-        header("Location: " . BASE_URL . 'home');
+
+        if($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png"){
+            $this->modelolibro->crearlibro($nombre,$autor,$categoria,$descripcion,  $_FILES['imagen']['tmp_name']);
+            header("Location: " . BASE_URL . 'home');
+        } else {
+            $this->modelolibro->crearlibro($nombre,$autor,$categoria,$descripcion);
+        header("Location: " . BASE_URL . 'home');}
     }
 
     //formulario de creacion de libro
