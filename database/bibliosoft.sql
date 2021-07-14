@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-07-2021 a las 06:55:16
+-- Tiempo de generación: 14-07-2021 a las 07:07:45
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.2.34
 
@@ -104,7 +104,7 @@ INSERT INTO `libros` (`nombre`, `id_libro`, `autor`, `categoria`, `descripcion`,
 ('A Sangre Fría', 12, 'Truman Capote', 10, 'El pueblo de Holcomb está en las elevadas llanuras trigueras del oeste de Kansas, una zona solitaria que otros habitantes de Kansas llaman `allá`...\" A partir de esta localización precisa, Truman Capo', 'images/sangre.jpg'),
 ('Los Detectives Salvajes', 13, 'Roberto Bolaño', 8, 'Entre la narrativa detectivesca, la novela de carretera, el relato biográfico y la crónica, Los detectives salvajes está considerada por la crítica y el público internacionales como una de las mejores', 'images/detective.jpg'),
 ('Autos para pintar', 16, 'Gonzalo Pérez Iriarte', 6, 'Dibujos de autos para pintar', 'images/auto.jpg'),
-('warfra', 18, 'asdasd', 4, '1234', 'images/60ee6dc7366fd.jpg');
+('Warframe', 18, 'Digital Extreme', 4, 'prueba editar con imagen', 'images/60ee70eca5863.jpg');
 
 -- --------------------------------------------------------
 

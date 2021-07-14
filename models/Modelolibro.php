@@ -31,9 +31,13 @@ class modelolibro extends Modelo {
     }
 
     //guarda cambios en libros
-    function guardar($id,$nombre,$autor,$categoria,$descripcion,$imagen){
+    function guardar($id,$nombre,$autor,$categoria,$descripcion,$image = NULL){
+        $pathImg = null;
+        if ($image)
+            $pathImg = $this->uploadImage($image);
+
         $query = $this-> getDb()->prepare('UPDATE libros SET nombre = ?, autor = ?, categoria = ?, descripcion = ?, imagen = ? WHERE id_libro = ?');
-        $query->execute([$nombre,$autor,$categoria,$descripcion,$imagen,$id]);
+        $query->execute([$nombre,$autor,$categoria,$descripcion,$pathImg,$id]);
     }
 
     //borra un libro por id

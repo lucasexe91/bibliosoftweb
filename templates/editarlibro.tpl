@@ -15,7 +15,7 @@
                 </div>
               </div>
               <div class="col">
-                <form action="guardarlibro/{$unlibro->id_libro}" method="POST">
+                <form action="guardarlibro/{$unlibro->id_libro}" method="POST" enctype="multipart/form-data">
                 <br>
                 <br>
                 <div class="form-floating mb-3">
@@ -37,9 +37,9 @@
                   <input type="descripcion" class="form-control" id="floatingInput" placeholder="Descripción" name="descripcion">
                   <label for="floatingInput" >Descripción</label>
                 </div>
-                <div class="form-floating mb-3">
-                  <input type="imagen" class="form-control" id="floatingInput" placeholder="Imágen" name="imagen">
-                  <label for="floatingInput" >URL de imagen</label>
+                <div class="mb-3">
+                  <label for="formFile" class="form-label">Imagen</label>
+                  <input class="form-control" type="file" id="formFile" name="imagen">
                 </div>
                 <a href="verlibro/{$unlibro->id_libro}" class="btn btn-outline-danger">Cancelar</a>
                 <input class="btn btn-outline-success" type="submit">
