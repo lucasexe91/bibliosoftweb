@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-07-2021 a las 23:03:21
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 8.0.1
+-- Tiempo de generación: 14-07-2021 a las 06:55:16
+-- Versión del servidor: 10.4.14-MariaDB
+-- Versión de PHP: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -68,7 +68,8 @@ CREATE TABLE `comentarios` (
 --
 
 INSERT INTO `comentarios` (`id_comentario`, `comentario`, `calificacion`, `idlibro`, `usuario`) VALUES
-(1, 'AGUANTE SMEAGOL!', 5, 1, 5);
+(1, 'AGUANTE SMEAGOL!', 5, 1, 5),
+(2, 'prueba', 2, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -82,7 +83,7 @@ CREATE TABLE `libros` (
   `autor` varchar(100) NOT NULL,
   `categoria` int(11) NOT NULL,
   `descripcion` varchar(200) NOT NULL,
-  `imagen` varchar(100) NOT NULL
+  `imagen` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -102,7 +103,8 @@ INSERT INTO `libros` (`nombre`, `id_libro`, `autor`, `categoria`, `descripcion`,
 ('La Final de nuestras vidas', 10, 'Andres Burgo', 6, 'La final de nuestras vidas es un libro a la altura de lo que hubo en juego entre los dos equipos más grandes de la Argentina durante la edición 2018 de la Copa Libertadores de América.', 'images/final.jpg'),
 ('A Sangre Fría', 12, 'Truman Capote', 10, 'El pueblo de Holcomb está en las elevadas llanuras trigueras del oeste de Kansas, una zona solitaria que otros habitantes de Kansas llaman `allá`...\" A partir de esta localización precisa, Truman Capo', 'images/sangre.jpg'),
 ('Los Detectives Salvajes', 13, 'Roberto Bolaño', 8, 'Entre la narrativa detectivesca, la novela de carretera, el relato biográfico y la crónica, Los detectives salvajes está considerada por la crítica y el público internacionales como una de las mejores', 'images/detective.jpg'),
-('Autos para pintar', 16, 'Gonzalo Pérez Iriarte', 6, 'Dibujos de autos para pintar', 'images/auto.jpg');
+('Autos para pintar', 16, 'Gonzalo Pérez Iriarte', 6, 'Dibujos de autos para pintar', 'images/auto.jpg'),
+('warfra', 18, 'asdasd', 4, '1234', 'images/60ee6dc7366fd.jpg');
 
 -- --------------------------------------------------------
 
@@ -172,13 +174,13 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `libros`
 --
 ALTER TABLE `libros`
-  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
