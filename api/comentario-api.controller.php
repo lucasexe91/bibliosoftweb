@@ -23,17 +23,21 @@ class ComentarioApiController {
     }
 
     //toma los datos del comentario y los manda a la funcion "nuevocomentario" dentro de su respectivo modelo.
-    public function comentar(){
+    public function comentar($params=[]){
         $datos = $this->getData();
-        print_r($datos);
-        die();
         $comentario = $datos->comentario;
         $calificacion = $datos->calificacion;
         $id_libro = $datos->id_libro;
         $usuario = $datos->usuario;
         $id_usuario = $this->modelousuario->getiduserbyusername($usuario);
-        $this->modelocomentario->nuevocomentario($comentario, $calificacion, $id_libro, $id_usuario);
+        $this->modelocomentario->nuevocomentario($comentario, $calificacion, $id_libro, $id_usuario->id);
         $this->view->response('', 200);
     }
 
+    //traer comentarios
+    public function prueba(){
+        $datos = $this->modelocomentario->getAllComentarios();
+        var_dump($datos);
+        return $datos;
+    }
 }

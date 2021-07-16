@@ -16,4 +16,11 @@ class ModeloComentario extends Modelo {
         $query->execute([$idlibro]);
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
+
+    //trae todos los comentarios
+    function getAllComentarios(){
+        $query = $this->getDb()->prepare('SELECT * FROM comentarios');
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
 }
