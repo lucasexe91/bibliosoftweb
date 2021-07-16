@@ -22,6 +22,8 @@
             </div>
           </div>
             {if isset($username) && $username}
+              <div class="col">
+                  <ol class="list-group list-group-numbered">
               {if isset($admin) && $admin }
                 {if $admin == 1 }
                   {include 'templates/VUE/commentsadmin.vue'}
@@ -29,6 +31,9 @@
               {else}
               {include 'templates/VUE/comments.vue'} <!-- vue de comentarios-->
               {/if}
+              </ol>
+                {include 'templates/formcomentar.tpl'}
+              </div>
             {/if}
     </div>
   </div>

@@ -1,12 +1,18 @@
 'use strict';
 
-//document.getElementById("comentarbtn").addEventListener("click", () => {comentar(recibircomentario())});
+document.getElementById("comentarbtn").addEventListener("click", () => {comentar(recibircomentario())});
 
 let app = new Vue({
     el: "#comentario",
     data: {
         subtitle: "Estos comentarios se renderizan desde el cliente usando Vue.js",
         comentarios: [] 
+    },
+    methods: {
+        borrarcomentario: 
+            function(id_comentario){
+                borrarcomentario(id_comentario);
+            }
     }
 });
 
@@ -25,7 +31,7 @@ cargarcomentarios(idlibro);
         }).then(response =>{
             if (response.status==200){
                 alert('Su comentario ha sido publicado');
-                location.reload();
+                
             }else{
                 alert('No se ha podido comentar');
             }
@@ -36,7 +42,7 @@ cargarcomentarios(idlibro);
     function recibircomentario(){
         let username = document.querySelector("#username").innerHTML;
         let idlibro = document.querySelector("#idlibro").innerHTML;
-        let comentario = document.getElementById("comentario").value;
+        let comentario = document.getElementById("nuevocomentario").value;
         let calificacion = document.getElementById("nota").value;
         
         let data = {
@@ -45,6 +51,8 @@ cargarcomentarios(idlibro);
             "comentario": comentario,
             "calificacion": calificacion
         }
+
+        console.log("llegue a recibir pero cargue: "+data);
         return data;
     }
 
@@ -58,7 +66,7 @@ cargarcomentarios(idlibro);
             if (response.status == 200)
             {
                 alert('El comentario fue eliminado');
-                window.reload();
+                window.location.reload();
             }else{
                 alert('El comentario no pudo ser eliminado');
             }
