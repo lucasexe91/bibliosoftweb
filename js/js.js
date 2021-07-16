@@ -31,7 +31,7 @@ cargarcomentarios(idlibro);
         }).then(response =>{
             if (response.status==200){
                 alert('Su comentario ha sido publicado');
-                
+                window.location.reload();
             }else{
                 alert('No se ha podido comentar');
             }
