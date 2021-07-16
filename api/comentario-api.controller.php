@@ -53,7 +53,7 @@ class ComentarioApiController {
         if ($comentarios){
             $this->view->response($comentarios,200);
         }else{
-            $this->view->response('No se pudieron cargar los comentarios de este libro',404);
+            $this->view->response(null,200);
         }
         return $comentarios;
     }
