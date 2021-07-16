@@ -23,4 +23,16 @@ class ModeloComentario extends Modelo {
         $query->execute();
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
+
+    //trae un comentario por id
+    function getComentbyID($id){
+        $query = $this->getDb()->prepare('SELECT * FROM comentarios WHERE id_comentario = ?');
+        $query->execute([$id]);
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
+
+    function eliminarcomentario($id){
+        $query = $this->getDb()->prepare('DELETE FROM comentarios WHERE id_comentario = ?');
+        $query->execute([$id]);
+    }
 }

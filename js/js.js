@@ -11,9 +11,9 @@ document.getElementById("comentarbtn").addEventListener("click", () => {comentar
             body: JSON.stringify(data)
         }).then(response =>{
             if (response.status==200){
-                console.log('se mando :D');
+                alert('Su comentario ha sido publicado');
             }else{
-                console.log('LPM :(');
+                alert('No se ha podido comentar');
             }
         }).catch(exception => console.log(exception));
     }
@@ -25,8 +25,6 @@ document.getElementById("comentarbtn").addEventListener("click", () => {comentar
         let comentario = document.getElementById("comentario").value;
         let calificacion = document.getElementById("nota").value;
         
-        console.log(calificacion);
-        
         let data = {
             "usuario": username,
             "id_libro": idlibro,
@@ -36,4 +34,20 @@ document.getElementById("comentarbtn").addEventListener("click", () => {comentar
 
         return data;
 
+    }
+
+    function borrarcomentario(commentID) {
+        fetch('api/borrarcomentario/'+commentID,{
+            method: 'DELETE',
+            mode: 'cors'
+        }) 
+        .then( response =>{ 
+            if (response.status == 200)
+            {
+                alert('El comentario fue eliminado');
+            }else{
+                alert('El comentario no pudo ser eliminado');
+            }
+        })
+        .catch(exception => console.log(exception));
     }

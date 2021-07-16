@@ -34,6 +34,18 @@ class ComentarioApiController {
         $this->view->response('', 200);
     }
 
+    //borra un comentario por id
+    public function borrarComentario($params=[]){
+        $id = $params[':ID'];
+        $comentario = $this->modelocomentario->getComentbyID($id);
+        if ($comentario){
+            $this->modelocomentario->eliminarcomentario($comentario->id_comentario);
+            $this->view->response('comentario eliminado con exito',200);
+        }else{
+            $this->view->response('comentario no encontrado',404);
+        }
+    }
+
     //traer comentarios
     public function prueba(){
         $datos = $this->modelocomentario->getAllComentarios();
