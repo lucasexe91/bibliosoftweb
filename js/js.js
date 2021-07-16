@@ -23,7 +23,10 @@ document.getElementById("comentarbtn").addEventListener("click", () => {comentar
         let username = document.querySelector("#username").innerHTML;
         let idlibro = document.querySelector("#idlibro").innerHTML;
         let comentario = document.getElementById("comentario").value;
-        let calificacion = document.getElementById("calificacion").value;
+        let calificacion = document.getElementById("nota").value;
+        
+        console.log(calificacion);
+        
         let data = {
             "usuario": username,
             "id_libro": idlibro,

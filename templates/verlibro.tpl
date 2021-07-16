@@ -66,12 +66,12 @@
                         <label>
                             Calificación
                         </label>
-                          <select id="calificacion" class="form-select" aria-label="Default select example" name="calificacion">
+                          <select id="nota" class="form-select" >
                               <option value="1">1</option>
-                              <option value="1">2</option>
-                              <option value="1">3</option>
-                              <option value="1">4</option>
-                              <option value="1">5</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
                           </select>
                         </div>
                         <br>
