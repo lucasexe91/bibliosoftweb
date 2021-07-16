@@ -1,6 +1,7 @@
 'use strict';
 
 document.getElementById("comentarbtn").addEventListener("click", () => {comentar(recibircomentario())});
+document.getElementById("comentarios").addEventListener("load",()=>{cargarcomentarios(recibirtodosloscomentarios())});
 
     //Post del Json para comentario nuevo
     function comentar(data) {
@@ -47,6 +48,22 @@ document.getElementById("comentarbtn").addEventListener("click", () => {comentar
                 window.reload();
             }else{
                 alert('El comentario no pudo ser eliminado');
+            }
+        })
+        .catch(exception => console.log(exception));
+    }
+    function cargarcomentarios(idlibro){
+        fetch('api/getcommentsbybook/'+idlibro,{
+            method: 'GET',
+            mode: 'cors',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(idlibro)
+        })
+        .then( response =>{
+            if (response.status==200){
+                
+            }else{
+                
             }
         })
         .catch(exception => console.log(exception));

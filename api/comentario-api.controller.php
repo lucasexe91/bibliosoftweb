@@ -47,9 +47,14 @@ class ComentarioApiController {
     }
 
     //traer comentarios
-    public function prueba(){
-        $datos = $this->modelocomentario->getAllComentarios();
-        var_dump($datos);
-        return $datos;
+    public function getcommentsbybook($params=[]){
+        $idlibro = $params[':ID'];
+        $comentarios = $this->modelocomentario->buscarComentariosDeLibro($idlibro);
+        if ($comentarios){
+            $this->view->response('Se cargaron los comentarios de este libro satisfactoriamente',200);
+        }else{
+            $this->view->response('No se pudieron cargar los comentarios de este libro',404);
+        }
+        return $comentarios;
     }
 }
