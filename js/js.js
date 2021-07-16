@@ -12,6 +12,7 @@ document.getElementById("comentarbtn").addEventListener("click", () => {comentar
         }).then(response =>{
             if (response.status==200){
                 alert('Su comentario ha sido publicado');
+                location.reload();
             }else{
                 alert('No se ha podido comentar');
             }
@@ -31,9 +32,7 @@ document.getElementById("comentarbtn").addEventListener("click", () => {comentar
             "comentario": comentario,
             "calificacion": calificacion
         }
-
         return data;
-
     }
 
     function borrarcomentario(commentID) {
@@ -45,6 +44,7 @@ document.getElementById("comentarbtn").addEventListener("click", () => {comentar
             if (response.status == 200)
             {
                 alert('El comentario fue eliminado');
+                window.reload();
             }else{
                 alert('El comentario no pudo ser eliminado');
             }

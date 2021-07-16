@@ -41,7 +41,7 @@
                           </li>
                           {if isset($admin) && $admin }
                             {if $admin == 1 }
-                              <a href="/api/borrarcomentario/{$comentario->id_comentario}" class="btn btn-outline-danger">Eliminar comentario</a>
+                              <button type="button" onclick="borrarcomentario({$comentario->id_comentario})" class="btn btn-outline-danger">Eliminar comentario</button>
                           {/if}
                           {/if}
                         {/foreach}
