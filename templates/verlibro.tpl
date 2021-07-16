@@ -21,43 +21,15 @@
               </div>
             </div>
           </div>
-             {include 'templates/VUE/comments.vue'} <!-- vue de comentarios-->
-                    <br>
-                    <div class="container border border-sucess rounded">
-                    <form>
-                        <br>
-                        <legend>
-                          Deja tu Comentario y calificación!
-                        </legend>
-                        <label id="idlibro">{$unlibro->id_libro}</label>
-                        <label id="username">{$username}</label>
-                        <br>
-                        <div class="form-group">
-                          <label>Escribe tu comentario aqui</label>
-                          <textarea id="comentario" type="comentario" rows="3" class="form-control" id="floatingInput" placeholder="comentario" name="comentario"></textarea>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                        <label>
-                            Calificación
-                        </label>
-                          <select id="nota" class="form-select" >
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                          </select>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                          <button type="button" class="btn btn-outline-success" id="comentarbtn">Comentar</button>
-                        </div>
-                    </form>
-                    <br>
-                    </div>
-                </div>
+            {if isset($username) && $username}
+              {if isset($admin) && $admin }
+                {if $admin == 1 }
+                  {include 'templates/VUE/commentsadmin.vue'}
+                {/if}
+              {else}
+              {include 'templates/VUE/comments.vue'} <!-- vue de comentarios-->
               {/if}
+            {/if}
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> <!--script del Vue-->

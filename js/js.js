@@ -1,6 +1,19 @@
 'use strict';
 
-document.getElementById("comentarbtn").addEventListener("click", () => {comentar(recibircomentario())});
+//document.getElementById("comentarbtn").addEventListener("click", () => {comentar(recibircomentario())});
+
+let app = new Vue({
+    el: "#comentario",
+    data: {
+        subtitle: "Estos comentarios se renderizan desde el cliente usando Vue.js",
+        comentarios: [] 
+    }
+});
+
+let url = window.location.href.split("/");
+let idlibro = url[url.length-1];
+
+cargarcomentarios(idlibro);
 
     //Post del Json para comentario nuevo
     function comentar(data) {
@@ -54,20 +67,14 @@ document.getElementById("comentarbtn").addEventListener("click", () => {comentar
     }
 
     //carga los comentarios por id de un libro.
-    function cargarcomentarios(){
-        fetch('api/getcommentsbybook/'+idlibro,{
-            method: 'GET',
-            mode: 'cors',
-            headers: {'Content-Type':'application/json'},
-            body: JSON.stringify(idlibro)
-        })
-        .then( response =>{
-            if (response.status==200){
-                return response.json();
+    function cargarcomentarios(idlibro){
+        fetch('api/getcommentsbybook/'+idlibro)
+        .then(response => response.json())
+        .then(comentarios => {
+        app.comentarios = comentarios; 
+    })
+    .catch(error => console.log(error));
+
+
                 
-            }else{
-                alert('No se pudieron cargar los comentarios, intente mas tarde');
-            }
-        })
-        .catch(exception => console.log(exception));
     }
