@@ -10,6 +10,13 @@ class ModeloUsuario extends Modelo {
         return $query->fetch(PDO::FETCH_OBJ);
     }
 
+    //retorna id de un nombre de user
+    public function getiduserbyusername($username){
+        $query = $this->getDb()->prepare('SELECT id FROM usuarios WHERE usuario = ?');
+        $query->execute([$username]);
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
+
     //hasheo de contraseña y creacion de usuario en base de datos
     public function add($user, $pass) {
 

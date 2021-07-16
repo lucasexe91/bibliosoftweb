@@ -5,9 +5,9 @@ require_once('Modelo.php');
 class ModeloComentario extends Modelo {
 
     //sube un comentario hecho por un usuario a la tabla "comentarios"
-    function nuevocomentario($comentario, $calificacion, $idlibro, $usuario){
+    function nuevocomentario($comentario, $calificacion, $idlibro, $id_usuario){
         $query = $this->getDb()->prepare('INSERT INTO comentarios (comentario, calificacion, idlibro, usuario) VALUES (?,?,?,?)');
-        return $query->execute([$comentario, $calificacion, $idlibro, $usuario]);
+        return $query->execute([$comentario, $calificacion, $idlibro, $id_usuario]);
     }
 
     //busca todos los comentarios de un libro por id

@@ -21,6 +21,7 @@
               </div>
             </div>
           </div>
+              {if isset($username) && $username }
                 <div class="col">
                     <ol class="list-group list-group-numbered">
                     {if isset($listacomentarios)}
@@ -48,22 +49,24 @@
                     </ol>
                     <br>
                     <div class="container border border-sucess rounded">
-                    <form action="/api/comentar/{$unlibro->id_libro}/{$username}" method="POST">
+                    <form>
                         <br>
                         <legend>
                           Deja tu Comentario y calificación!
                         </legend>
+                        <label id="idlibro">{$unlibro->id_libro}</label>
+                        <label id="username">{$username}</label>
                         <br>
                         <div class="form-group">
                           <label>Escribe tu comentario aqui</label>
-                          <textarea type="comentario" rows="3" class="form-control" id="floatingInput" placeholder="comentario" name="comentario"></textarea>
+                          <textarea id="comentario" type="comentario" rows="3" class="form-control" id="floatingInput" placeholder="comentario" name="comentario"></textarea>
                         </div>
                         <br>
                         <div class="form-group">
                         <label>
                             Calificación
                         </label>
-                          <select class="form-select" aria-label="Default select example" name="calificacion">
+                          <select id="calificacion" class="form-select" aria-label="Default select example" name="calificacion">
                               <option value="1">1</option>
                               <option value="1">2</option>
                               <option value="1">3</option>
@@ -73,12 +76,14 @@
                         </div>
                         <br>
                         <div class="form-group">
-                          <input class="btn btn-outline-success" type="submit">
+                          <button type="button" class="btn btn-outline-success" id="comentarbtn">Comentar</button>
                         </div>
                     </form>
                     <br>
                     </div>
                 </div>
+              {/if}
     </div>
   </div>
+  <script src="js/js.js"></script>
 {include 'templates/footer.tpl'}
