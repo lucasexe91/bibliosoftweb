@@ -1,7 +1,6 @@
 'use strict';
 
 document.getElementById("comentarbtn").addEventListener("click", () => {comentar(recibircomentario())});
-document.getElementById("comentarios").addEventListener("load",()=>{cargarcomentarios(recibirtodosloscomentarios())});
 
     //Post del Json para comentario nuevo
     function comentar(data) {
@@ -36,6 +35,7 @@ document.getElementById("comentarios").addEventListener("load",()=>{cargarcoment
         return data;
     }
 
+    //borra un comentario por id
     function borrarcomentario(commentID) {
         fetch('api/borrarcomentario/'+commentID,{
             method: 'DELETE',
@@ -52,7 +52,9 @@ document.getElementById("comentarios").addEventListener("load",()=>{cargarcoment
         })
         .catch(exception => console.log(exception));
     }
-    function cargarcomentarios(idlibro){
+
+    //carga los comentarios por id de un libro.
+    function cargarcomentarios(){
         fetch('api/getcommentsbybook/'+idlibro,{
             method: 'GET',
             mode: 'cors',
@@ -61,9 +63,10 @@ document.getElementById("comentarios").addEventListener("load",()=>{cargarcoment
         })
         .then( response =>{
             if (response.status==200){
+                return response.json();
                 
             }else{
-                
+                alert('No se pudieron cargar los comentarios, intente mas tarde');
             }
         })
         .catch(exception => console.log(exception));

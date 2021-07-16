@@ -51,7 +51,7 @@ class ComentarioApiController {
         $idlibro = $params[':ID'];
         $comentarios = $this->modelocomentario->buscarComentariosDeLibro($idlibro);
         if ($comentarios){
-            $this->view->response('Se cargaron los comentarios de este libro satisfactoriamente',200);
+            $this->view->response($comentarios,200);
         }else{
             $this->view->response('No se pudieron cargar los comentarios de este libro',404);
         }
