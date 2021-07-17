@@ -46,9 +46,8 @@ class Controlalibros {
     function muestralibro($id){
         $libroAver = $this->modelolibro->get($id);
         $categorias = $this->modeloCategorias->getcategoria($libroAver->categoria);
-        $comentarios = $this->modelocomentario->buscarComentariosDeLibro($id);
         $usuarios = $this->modelousuario->getAll();
-        $this->vistalibro->showlibro($libroAver,$categorias,$comentarios,$usuarios);
+        $this->vistalibro->showlibro($libroAver,$categorias,$usuarios);
     }
 
     //funcion para editar libros

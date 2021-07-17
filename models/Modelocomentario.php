@@ -31,6 +31,7 @@ class ModeloComentario extends Modelo {
         return $query->fetch(PDO::FETCH_OBJ);
     }
 
+    //elimina un comentario por id
     function eliminarcomentario($id){
         $query = $this->getDb()->prepare('DELETE FROM comentarios WHERE id_comentario = ?');
         $query->execute([$id]);
